@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object in JS - Car Info</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        td {
+            background-color: #f2f2f2;
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table id="tblData" border="1"></table>
+
+    <script>
+        // Create an object
+        let CarInfo = {
+            Model: "Civic",
+            Brand: "Honda",
+            Year: 2023,
+            Color: "Midnight Blue"
+        };
+
+        // Log one property to console
+        console.log(`${CarInfo.Brand}`);
+
+        // Generate table content
+        let tdata = "";
+        tdata += `<tr>`;
+        for (let key in CarInfo) {
+            tdata += `<th>${key}</th>`;
+        }
+        tdata += `</tr><tr>`;
+        for (let key in CarInfo) {
+            tdata += `<td>${CarInfo[key]}</td>`;
+        }
+        tdata += `</tr>`;
+
+        // Insert table content and apply styling
+        document.getElementById('tblData').innerHTML = tdata;
+    </script>
+</body>
+</html>

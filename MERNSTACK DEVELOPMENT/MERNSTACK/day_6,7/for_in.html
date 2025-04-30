@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple For...In Loop Book</title>
+</head>
+<body>
+    
+    <script>
+        // Object to iterate over
+        let book = {
+            title: "Math Adventure",
+            author: "John Doe",
+            pages: 120
+        };
+
+        // For...in loop to print each property
+        for (let prop in book) {
+            console.log("Book detail: " + prop + " is " + book[prop]);
+        }
+    </script>
+</body>
+</html>

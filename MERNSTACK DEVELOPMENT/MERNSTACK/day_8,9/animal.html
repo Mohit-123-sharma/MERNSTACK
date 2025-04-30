@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Selector</title>
+    <style>
+        .imgsize {
+            height: 120px;
+            width: 120px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        select, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Select an Animal</h2>
+    <select name="animal" id="animal">
+        <option value="lion">Lion</option>
+        <option value="elephant">Elephant</option>
+        <option value="giraffe">Giraffe</option>
+        <option value="zebra">Zebra</option>
+    </select>
+
+    <button onclick="showAnimalInfo()">Show Info</button>
+
+    <div id="root"></div>
+
+    <script>
+        function showAnimalInfo() {
+            var selectedAnimal = document.getElementById('animal').value;
+            if (selectedAnimal == "lion") {
+                document.getElementById('root').innerHTML = "Meet the mighty Lion!<br><img src='./lion.webp' class='imgsize'>";
+            } else if (selectedAnimal == "elephant") {
+                document.getElementById('root').innerHTML = "Welcome the gentle Elephant!<br><img src='./elephant.jpeg' class='imgsize'>";
+            } else if (selectedAnimal == "giraffe") {
+                document.getElementById('root').innerHTML = "Say hi to the tall Giraffe!<br><img src='./giraffe.webp' class='imgsize'>";
+            } else if (selectedAnimal == "zebra") {
+                document.getElementById('root').innerHTML = "Check out the striped Zebra!<br><img src='./zebra.jpeg' class='imgsize'>";
+            }
+        }
+    </script>
+</body>
+</html>

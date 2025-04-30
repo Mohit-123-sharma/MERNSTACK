@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun with Variables</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+            background-color: #f0f4f8;
+        }
+        .output {
+            font-size: 18px;
+            margin: 10px;
+            padding: 10px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Variable Magic</h1>
+    <div id="varOutput" class="output"></div>
+    <div id="letOutput" class="output"></div>
+    <div id="constOutput" class="output"></div>
+
+    <!-- internal javascript -->
+    <script>
+        // var - global scope
+        var score = 5;
+        console.log("var score:", score); // 5
+        score++;
+        document.getElementById('varOutput').innerHTML = `Var Score: ${score}`; // 6
+        console.log("var after ++:", score); // 6
+
+        // let - block scope
+        let lives = 3;
+        console.log("let lives:", lives); // 3
+        lives++;
+        document.getElementById('letOutput').innerHTML = `Let Lives: ${lives}`; // 4
+        console.log("let after ++:", lives); // 4
+
+        // const - cannot change
+        const name = "Mohit";
+        document.getElementById('constOutput').innerHTML = `Const Name: ${name}`;
+        console.log("const name:", name); // Vikram
+    </script>
+</body>
+</html>

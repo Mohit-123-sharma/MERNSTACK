@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logical While Loop Dropdowns</title>
+</head>
+<body>
+    <h3>Select Even Number:</h3>
+    <select name="even" id="even"></select>
+
+    <h3>Select Priority Level:</h3>
+    <select name="priority" id="priority"></select>
+
+    <script>
+        // While loop for even numbers (2 to 50)
+        let n = 1;
+        let evens = "";
+        while (n <= 50) {
+            // Logical condition: include only even numbers
+            if (!(n % 2)) { // Equivalent to n % 2 === 0
+                evens += "<option value='" + n + "'>" + n + "</option>";
+            }
+            n++;
+        }
+        document.getElementById("even").innerHTML = evens;
+
+        // Do...while loop for priority levels (1 to 5)
+        let p = 1;
+        let priorities = "";
+        do {
+            // Logical condition: label high priority (1 or 2)
+            let label = (p === 1 || p === 2) ? "High Priority " + p : "Priority " + p;
+            priorities += "<option value='" + p + "'>" + label + "</option>";
+            p++;
+        } while (p <= 5);
+        document.getElementById("priority").innerHTML = priorities;
+    </script>
+</body>
+</html>

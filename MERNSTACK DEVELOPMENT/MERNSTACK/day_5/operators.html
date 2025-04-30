@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple JS Operators</title>
+</head>
+<body>
+    
+    <script>
+        // Arithmetic Operators: +, -, *, **, /, %
+        let a = 6;
+        let b = 2;
+        console.log("Add:", a + b);      // 8
+        console.log("Subtract:", a - b); // 4
+        console.log("Multiply:", a * b); // 12
+        console.log("Divide:", a / b);   // 3
+        console.log("Modulus:", a % b);  // 0
+        console.log("Power:", 2 ** 3);   // 8
+
+        // Relational Operators: ==, ===, !=, !==
+        let c = 4;
+        let d = "4";
+        console.log("Equal (==):", c == d);       // true
+        console.log("Strict Equal (===):", c === d); // false
+        console.log("Not Equal (!=):", c != d);   // false
+        console.log("Strict Not Equal (!==):", c !== d); // true
+
+        // Logical Operators: &&, ||, !
+        let logic1 = (5 > 3);  // true
+        let logic2 = (2 > 4);  // false
+        console.log("AND (&&):", logic1 && logic2); // false
+        console.log("OR (||):", logic1 || logic2);  // true
+        console.log("NOT (!):", !(5 > 3));         // false
+
+        // Bitwise Operators: &, |, ^, ~
+        let x = 2; // Binary: 10
+        let y = 3; // Binary: 11
+        console.log("Bitwise AND (&):", x & y); // 2 (10 & 11 = 10)
+        console.log("Bitwise OR (|):", x | y);  // 3 (10 | 11 = 11)
+        console.log("Bitwise XOR (^):", x ^ y); // 1 (10 ^ 11 = 01)
+        console.log("Bitwise NOT (~):", ~x);    // -3 (inverts bits)
+
+    </script>
+</body>
+</html>

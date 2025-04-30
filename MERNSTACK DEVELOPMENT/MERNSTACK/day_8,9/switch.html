@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case with Fruits</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        select, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        .imgsize {
+            height: 80px;
+            width: 80px;
+            vertical-align: middle;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Select a Number</h2>
+    <select name="number" id="myinput">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+
+    <button onclick="showDetails()">Show</button>
+
+    <ul id="root"></ul>
+
+    <script>
+        function showDetails() {
+            let inputValue = document.getElementById('myinput').value;
+            console.log(inputValue);
+
+            switch (inputValue) {
+                case '1':
+                    document.getElementById('root').innerHTML = "<li>Apple <img src='./apple.jpeg' class='imgsize'></li>";
+                    break;
+                case '2':
+                    document.getElementById('root').innerHTML = "<li>Banana <img src='./banana.jpeg' class='imgsize'></li>";
+                    break;
+                case '3':
+                    document.getElementById('root').innerHTML = "<li>Orange <img src='./orange.jpeg' class='imgsize'></li>";
+                    break;
+                case '4':
+                    document.getElementById('root').innerHTML = "<li>Mango <img src='./mango.jpeg' class='imgsize'></li>";
+                    break;
+                default:
+                    document.getElementById('root').innerHTML = "<li>Invalid selection</li>";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

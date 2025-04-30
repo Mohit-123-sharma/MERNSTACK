@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Of Loop Example</title>
+</head>
+<body>
+    
+    <ul id="animalList"></ul>
+
+    <script>
+        // Array of animals
+        let animals = ["Tiger", "Elephant", "Deer", "Lion", "Zebra"];
+
+        // Variable to store HTML string
+        let animalContent = "";
+        // For...of loop to build list items
+        for (let animal of animals) {
+            animalContent += "<li>" + animal + "</li>";
+        }
+        // Set the ul's innerHTML once
+        document.getElementById("animalList").innerHTML = animalContent;
+    </script>
+</body>
+</html>

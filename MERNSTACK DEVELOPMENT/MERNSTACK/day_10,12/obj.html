@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object in JS - Mi Notebook Ultra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            color: #333;
+        }
+        #output {
+            text-align: left;
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 300px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>Mi Notebook Ultra Details</h2>
+    <div id="output"></div>
+
+    <script>
+        // Object
+        let laptopData = {
+            name: "Mi Notebook Ultra",
+            price: 59999,
+            RAM: "16GB",
+            graphicsCard: "Intel Iris Xe",
+            processor: "i5 11th Gen",
+            fullDetails: function() {
+                return `Name is ${this.name} and price is ₹${this.price}`;
+            }
+        };
+
+        // Update price
+        laptopData.price = 61999;
+
+        // Log properties and method
+        console.log(laptopData.name);
+        console.log(laptopData.price);
+        console.log(laptopData.fullDetails());
+
+        // Assign to another variable
+        let ld = laptopData;
+        console.log(ld.RAM);
+
+        // Display in browser (optional)
+        document.getElementById('output').innerHTML = `
+            Name: ${laptopData.name}<br>
+            Price: ₹${laptopData.price}<br>
+            RAM: ${laptopData.RAM}<br>
+            Graphics: ${laptopData.graphicsCard}<br>
+            Processor: ${laptopData.processor}<br>
+            Full Details: ${laptopData.fullDetails()}
+        `;
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Functions - Programming Languages</title>
+</head>
+<body>
+    <script>
+        let str = "we code in python";
+        console.log(str);
+        // charAt() to show character at specific index
+        console.log(str.charAt(8));
+
+        // includes() to check if substring exists
+        console.log(str.includes('PYTHON'));
+
+        // indexOf() to find first occurrence of substring
+        let str2 = "we code in python and learn python daily";
+        console.log(str2.indexOf('python'));
+
+        // slice() to extract a portion of the string
+        let oldStr = "we are coding in python for 3 years";
+        let index = oldStr.indexOf('python');
+        let newStr = oldStr.slice(index, index + 20);
+        console.log(newStr);
+        console.log(oldStr);
+
+        // toUpperCase() to convert string to uppercase
+        console.log(oldStr.toUpperCase());
+
+        // split() to split string into an array
+        let myStr = "python,javascript,java,cpp";
+        console.log(myStr.split(','));
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While Loop Dropdowns</title>
+</head>
+<body>
+    <h3>Select Hour:</h3>
+    <select name="hour" id="hour"></select>
+
+    <h3>Select Week:</h3>
+    <select name="week" id="week"></select>
+
+    <script>
+        // While loop for hours (1 to 24)
+        let h = 1;
+        let hours = "";
+        while (h <= 24) {
+            hours += "<option value='" + h + "'>" + h + "</option>";
+            h++;
+        }
+        document.getElementById("hour").innerHTML = hours;
+
+        // Do...while loop for weeks (1 to 4)
+        let w = 1;
+        let weeks = "";
+        do {
+            weeks += "<option value='" + w + "'>" + w + "</option>";
+            w++;
+        } while (w <= 4);
+        document.getElementById("week").innerHTML = weeks;
+    </script>
+</body>
+</html>

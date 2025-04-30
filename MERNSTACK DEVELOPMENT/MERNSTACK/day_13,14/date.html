@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All date function in javascript</title>
+</head>
+<body>
+    
+    <script>
+// Create Date Object
+let dt = new Date();
+console.log(dt);
+
+// Get year, month, date
+let year = dt.getFullYear();
+console.log(year);
+
+let monthZero = dt.getMonth(); // (0-11)
+console.log(monthZero);
+
+let monthNormal = dt.getMonth() + 1; // (1-12)
+console.log(monthNormal);
+
+let dateOfMonth = dt.getDate();
+console.log(dateOfMonth);
+
+// Get Day (0-6) (Sunday = 0)
+let dayOfWeek = dt.getDay();
+console.log(dayOfWeek);
+
+// Get hours, minutes, seconds, milliseconds
+let hours = dt.getHours();
+console.log(hours);
+
+let minutes = dt.getMinutes();
+console.log(minutes);
+
+let seconds = dt.getSeconds();
+console.log(seconds);
+
+let milliseconds = dt.getMilliseconds();
+console.log(milliseconds);
+
+// Get full UTC year
+let utcYear = dt.getUTCFullYear();
+console.log(utcYear);
+
+// Get UTC month
+let utcMonth = dt.getUTCMonth();
+console.log(utcMonth);
+
+// Get UTC date
+let utcDate = dt.getUTCDate();
+console.log(utcDate);
+
+// Get UTC hours
+let utcHours = dt.getUTCHours();
+console.log(utcHours);
+
+// Get UTC minutes
+let utcMinutes = dt.getUTCMinutes();
+console.log(utcMinutes);
+
+// Get UTC seconds
+let utcSeconds = dt.getUTCSeconds();
+console.log(utcSeconds);
+
+// Timestamp (milliseconds from 1970)
+let timestamp = dt.getTime();
+console.log(timestamp);
+
+// ISO String
+let isoFormat = dt.toISOString();
+console.log(isoFormat);
+
+// Locale String
+let localeFormat = dt.toLocaleString();
+console.log(localeFormat);
+
+// Date String
+let dateString = dt.toDateString();
+console.log(dateString);
+
+// Time String
+let timeString = dt.toTimeString();
+console.log(timeString);
+
+// Custom Time Format (H:M:S)
+let customTime = hours + ":" + minutes + ":" + seconds;
+console.log(customTime);
+
+// Custom Date Format (DD-MM-YYYY)
+let customDate = dateOfMonth + "-" + monthNormal + "-" + year;
+console.log(customDate);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If Else Age Eligibility</title>
+    <style>
+        .danger {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+        .eligible {
+            color: blue;
+        }
+        .warning {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" id="ageInput" placeholder="Enter your age">
+    <button onclick="checkEligibility()">Check</button>
+
+    <div id="result"></div>
+
+    <script>
+        function checkEligibility() {
+            var userAge = document.getElementById("ageInput").value;
+            if (userAge <= 0 || userAge > 120) {
+                document.getElementById("result").innerHTML = "<h1 class='danger'>Invalid age! Please enter a valid age.</h1>";
+            } else if (userAge > 0 && userAge < 6) {
+                document.getElementById("result").innerHTML = "<h1 class='warning'>Too young for school! Age is " + userAge + "</h1>";
+            } else if (userAge >= 6 && userAge < 18) {
+                document.getElementById("result").innerHTML = "<h1 class='eligible'>Eligible for school! Age is " + userAge + "</h1>";
+            } else if (userAge >= 18 && userAge < 60) {
+                document.getElementById("result").innerHTML = "<h1 class='success'>Eligible for voting and driving! Age is " + userAge + "</h1>";
+            } else if (userAge >= 60 && userAge <= 120) {
+                document.getElementById("result").innerHTML = "<h1 class='success'>Eligible for senior benefits! Age is " + userAge + "</h1>";
+            } else {
+                document.getElementById("result").innerHTML = "<h1 class='danger'>Something went wrong! Please try again.</h1>";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Functions - Random Colors</title>
+</head>
+<body id="bdy">
+    <script>
+        // Find maximum value
+        let max = Math.max(10, 5, 88, 42);
+        console.log(max);
+
+        // Find minimum value
+        let min = Math.min(10, -5, 88, 42);
+        console.log(min);
+
+        // Floor a decimal number
+        let num = 7.8333333;
+        let floored = Math.floor(num);
+        console.log(floored);
+
+        // Ceil a decimal number
+        let num1 = 4.7;
+        let ceiled = Math.ceil(num1);
+        console.log(ceiled);
+
+        // Generate random RGB values for background color
+        let r = Math.floor(Math.random() * 256); // 0 to 255
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+
+        // Apply random background color
+        document.getElementById('bdy').style.background = `rgb(${r},${g},${b})`;
+    </script>
+</body>
+</html>

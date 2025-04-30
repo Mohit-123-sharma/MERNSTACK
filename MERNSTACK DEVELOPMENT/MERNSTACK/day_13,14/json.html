@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Function - Car Data</title>
+</head>
+<body>
+    <script>
+        // Object format
+        let carData = {
+            model: "Civic",
+            brand: "Honda",
+            year: 2022
+        };
+
+        // Convert object to JSON format
+        let jsonCarData = JSON.stringify(carData);
+        console.log(carData.model);
+        console.log(carData.year);
+        console.log(jsonCarData);
+
+        // Convert JSON to object format
+        let jsonString = '{"model":"Mustang","brand":"Ford","year":2020}';
+        let carObj = JSON.parse(jsonString);
+        console.log(carObj);
+        console.log(carObj.model);
+        console.log(carObj.brand);
+
+        // Timed operations
+        setTimeout(() => {
+            console.log('Hello, car enthusiasts!');
+        }, 4000);
+
+        let intervalId = setInterval(() => {
+            console.log('Checking cars...');
+        }, 4000);
+    </script>
+</body>
+</html>

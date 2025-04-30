@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tata Cars Loops</title>
+</head>
+<body>
+    <h3>Select Tata Car Model:</h3>
+    <select id="carModel">
+        <option value="">Select a model</option>
+    </select>
+
+    <h3>Select Launch Year:</h3>
+    <select id="launchYear">
+        <option value="">Select a year</option>
+    </select>
+
+    <script>
+        // For loop to populate car models (e.g., 5 Tata models)
+        for (let i = 0; i < 5; i++) {
+            let models = ["Nexon", "Harrier", "Safari", "Punch", "Altroz"];
+            document.getElementById("carModel").innerHTML += `<option value="${models[i]}">${models[i]}</option>`;
+        }
+
+        // For loop to populate launch years (from current year to 2000)
+        let currentYear = new Date().getFullYear();
+        for (let i = currentYear; i >= 2000; i--) {
+            document.getElementById("launchYear").innerHTML += `<option value=${i}>${i}</option>`;
+        }
+
+        // Simple for loop to log a message
+        for (let i = 0; i < 3; i++) {
+            console.log("Tata Car '" + i + "'");
+        }
+
+        // Do...while loop (runs at least once, even if condition is false)
+        let j = 10;
+        do {
+            console.log("Iteration " + j);
+            j++;
+        } while (j < 5);
+
+        // For...in loop to log car info object
+        let carInfo = {
+            id: 2001,
+            model: "Tata Nexon",
+            factory: "Pune"
+        };
+        for (let key in carInfo) {
+            console.log(key + ": " + carInfo[key]);
+        }
+
+        // For...in loop on array (logs indices, similar to your example)
+        let tataCars = ["Nexon", "Punch", "Safari"];
+        for (let index in tataCars) {
+            console.log(index + ": " + tataCars[index]);
+        }
+
+        // For...of loop to log Tata car names
+        for (let car of tataCars) {
+            console.log(car);
+        }
+
+        // Commented-out incorrect for...of on object (mimicking your structure)
+        let carDetails = {
+            carId: 3001,
+            name: "Tata Harrier",
+            price: "15 Lakh"
+        };
+        // for (let detail of carDetails) {
+        //     console.log(detail);
+        // }
+    </script>
+</body>
+</html>

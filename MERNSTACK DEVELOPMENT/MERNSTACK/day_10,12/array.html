@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array in JS - Programming Languages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Select a Programming Language</h2>
+    <select name="language" id="language"></select>
+
+    <script>
+        // Initialize array
+        let languages = ["Python", "JavaScript", "Java", "C++", "Ruby", "Go", "Swift"];
+
+        // Array operations
+        languages.push("Rust"); // Add to end
+        languages.push("TypeScript"); // Add to end
+        languages.push("Kotlin"); // Add to end
+
+        for (let i = 1; i <= 2; i++) {
+            languages.pop(); // Remove last 2 elements
+        }
+
+        for (let i = 1; i <= 2; i++) {
+            languages.shift(); // Remove first 2 elements
+        }
+
+        languages[0] = "Python3"; // Replace first element
+        languages.unshift("PHP"); // Add to beginning
+
+        // Populate dropdown
+        let langOptions = "";
+        for (let lang of languages) {
+            langOptions += `<option value="${lang}">${lang}</option>`;
+        }
+        document.getElementById('language').innerHTML = langOptions;
+
+        // Log an element
+        console.log(languages[3]);
+    </script>
+</body>
+</html>

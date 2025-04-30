@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Defined Function - Compound Interest</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .light {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .dark {
+            background-color: #333;
+            color: #f4f4f4;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px 0;
+            width: 200px;
+            font-size: 16px;
+        }
+        input[type="button"], button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        input[type="button"]#lightMode, button {
+            background-color: #4CAF50;
+            color: white;
+        }
+        input[type="button"]#darkMode {
+            background-color: #555;
+            color: white;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body id="bdy" class="light">
+    <input type="button" onclick="changeLightMode()" value="Light Mode" id="lightMode">
+    <input type="button" onclick="changeDarkMode()" value="Dark Mode" id="darkMode">
+    
+    <h1>Compound Interest Calculator</h1>
+    <div>
+        <input type="text" id="principal" placeholder="Enter Principal Amount"><br><br>
+        <input type="text" id="time" placeholder="Enter Time (Years)"><br><br>
+        <input type="text" id="rate" placeholder="Enter Annual Rate (%)"><br><br>
+        <input type="text" id="compounds" placeholder="Compounds per Year"><br><br>
+
+        <button onclick="calculateCompoundInterest()">Calculate</button>
+    </div>
+    <div id="result"></div>
+
+    <script>
+        // Function to switch to light mode
+        function changeLightMode() {
+            document.getElementById('bdy').className = 'light';
+        }
+
+        // Function to switch to dark mode
+        function changeDarkMode() {
+            document.getElementById('bdy').className = 'dark';
+        }
+
+        // Function to calculate compound interest
+        function calculateCompoundInterest() {
+            let principal = parseFloat(document.getElementById('principal').value);
+            let time = parseFloat(document.getElementById('time').value);
+            let rate = parseFloat(document.getElementById('rate').value);
+            let compounds = parseInt(document.getElementById('compounds').value);
+
+            // Validate inputs
+            if (isNaN(principal) || isNaN(time) || isNaN(rate) || isNaN(compounds)) {
+                document.getElementById('result').innerHTML = "Please enter valid numbers";
+                return;
+            }
+
+            // Compound interest formula: A = P(1 + r/n)^(nt)
+            let amount = principal * Math.pow(1 + rate / (100 * compounds), compounds * time);
+            let interest = amount - principal;
+
+            // Display result
+            document.getElementById('result').innerHTML = `
+                Principal: ₹${principal.toFixed(2)}<br>
+                Compound Interest: ₹${interest.toFixed(2)}<br>
+                Total Amount: ₹${amount.toFixed(2)}
+            `;
+        }
+    </script>
+</body>
+</html>
